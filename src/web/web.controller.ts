@@ -10,7 +10,7 @@ import {
 } from '@nestjs/common';
 import type { Request } from 'express';
 import { PostHelloDot } from 'src/web/dto/WebDto';
-import { WebService } from 'src/web/service/web.service';
+import { WebService } from 'src/web/web.service';
 
 @Controller('web')
 export class WebController {
