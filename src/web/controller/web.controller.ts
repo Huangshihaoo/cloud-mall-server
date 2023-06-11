@@ -9,8 +9,8 @@ import {
   Req,
 } from '@nestjs/common';
 import type { Request } from 'express';
-import { PostHelloDot } from 'src/dot/web/WebDto';
-import { WebService } from 'src/service/web/web.service';
+import { PostHelloDot } from 'src/web/dto/WebDto';
+import { WebService } from 'src/web/service/web.service';
 
 @Controller('web')
 export class WebController {
