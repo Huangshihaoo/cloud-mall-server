@@ -1,22 +1,12 @@
-import {
-  Body,
-  Controller,
-  Get,
-  Param,
-  Post,
-  Query,
-  Redirect,
-  Req,
-} from '@nestjs/common';
+import { Body, Controller, Get, Param, Post, Req } from '@nestjs/common';
 import type { Request } from 'express';
-import { PostHelloDot } from 'src/web/dto/WebDto';
-import { WebService } from 'src/web/web.service';
+import { PostHelloDot } from './dto/GoodsDto';
+import { GoodsService } from './goods.service';
 
-@Controller('web')
-export class WebController {
-  constructor(private webService: WebService) {
-    // super(webService);
-  }
+@Controller('goods')
+export class GoodsController {
+  constructor(private webService: GoodsService) {}
+
   @Get('hello')
   hello(@Req() request: Request): string {
     console.log(request);

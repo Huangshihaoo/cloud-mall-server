@@ -3,14 +3,26 @@
  */
 import { Module } from '@nestjs/common';
 
-import { AdminController } from './admin/admin.controller'; // 后台总控制器
-import { WebController } from './web/web.controller'; // 前台总控制器
-import { AdminService } from './admin/admin.service'; // 前台总控制器
-import { WebService } from './web/web.service'; // 前台总控制器
+import { AdminModule } from './admin/admin.module'; // 后台模块
+import { WebModule } from './web/web.module'; // 前台模块
+import { RouterModule } from '@nestjs/core';
 
 @Module({
-  imports: [],
-  controllers: [AdminController, WebController],
-  providers: [AdminService, WebService],
+  imports: [
+    RouterModule.register([
+      {
+        path: 'admin',
+        module: AdminModule,
+      },
+      {
+        path: 'web',
+        module: WebModule,
+      },
+    ]),
+    AdminModule,
+    WebModule,
+  ],
+  controllers: [],
+  providers: [],
 })
 export class AppModule {}
