@@ -5,7 +5,7 @@ import { GoodsService } from './goods.service';
 
 @Controller('goods')
 export class GoodsController {
-  constructor(private webService: GoodsService) {}
+  constructor(private goodsService: GoodsService) {}
 
   @Get('hello')
   hello(@Req() request: Request): string {
@@ -14,7 +14,7 @@ export class GoodsController {
   }
   @Get('hello1')
   hello1(): string {
-    return this.webService.getHelloWorld();
+    return this.goodsService.getHelloWorld();
   }
   @Get('hello2')
   hello2(@Param() param: { id: string }): string {

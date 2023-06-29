@@ -5,11 +5,15 @@ content-type: text/html
 POST http://127.0.0.1:8080/web/goods/hello HTTP/1.1
 Content-Type: application/json
 
-{ 
+{
   "name": "213",
   "age": 18
 }
 ###
-GET  http://127.0.0.1:8080/web/goods/hello1 HTTP/1.1
+GET  http://127.0.0.1:8080/web/goods/hello HTTP/1.1
 ###
 get http://127.0.0.1:8080/admin/users/login
+###
+GET  http://127.0.0.1:8080/web/users/login HTTP/1.1
+###
+GET  http://127.0.0.1:8088/web/users/login HTTP/1.1
